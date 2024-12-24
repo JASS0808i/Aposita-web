@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Navidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #002b5b;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: #004b8d;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tree {
+            font-size: 50px;
+            color: #00ff00;
+            margin: 20px 0;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from { color: #00ff00; }
+            to { color: #ff0000; }
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6600;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff4500;
+        }
+        .hidden {
+            display: none;
+            margin-top: 20px;
+            text-align: center;  /* Centrado de texto */
+            opacity: 0;
+            animation: fadeIn 2s forwards; /* Animación para que el texto aparezca poco a poco */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .girasol {
+            font-size: 50px;
+            color: #FFD700;
+            margin-top: 20px;
+            display: none;
+        }
+        .phrase {
+            font-size: 20px;
+            margin-top: 20px;
+            font-style: italic;
+            color: #ff6347;
+        }
+        p {
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: pre-wrap;
+            text-align: center; /* Centrado del texto */
+            max-width: 100%;
+        }
+        .snowman {
+            font-size: 80px;
+            color: #ffffff;
+        }
+        .card-final {
+            background: #006a7f;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .signature {
+            font-family: 'Pacifico', cursive;
+            font-size: 36px;
+            color: #ff6347;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Feliz Navidad, mi cielito precioso</h1>
+        <div class="tree">🎄</div>
+        <p>Mi amor, quiero que sepas que cada momento contigo ha sido único. Estoy aquí para ti, siempre.</p>
+        <button onclick="showMessage()">Haz clic aquí para leer más</button>
+        <p id="hiddenMessage1" class="hidden">Mi vida, te amo demasiado, eres la persona más importante de mi vida, quiero estar siempre contigo, este es un pequeño regalo que hice para ti con mucho esfuerzo...</p>
+        <button id="showLetterBtn" class="hidden" onclick="showLetter()">Leer mi carta</button>
+        <p id="hiddenLetter" class="hidden">Mi amor,
+
+Sé que hay momentos en los que siento que no hago nada bien, que mis palabras o mis acciones no son lo que esperas de mí. Y me duele, me hiere, porque mi mayor miedo es fallarte, hacerte sentir que no soy lo suficiente. Y, sin embargo, aquí estoy, diciéndote que te amo con todo lo que soy, con todo lo que tengo, aunque a veces no lo sepa demostrar.
+
+Este regalo, esta carta, este esfuerzo que he puesto aquí, no es nada comparado con lo que realmente siento por ti. Llevo meses pensándolo, buscando la forma de expresarlo, de hacerte sentir lo que, aunque no siempre te lo diga, está en mi pecho. Estoy aquí, queriéndote, esperando que me entiendas, que veas en cada palabra que esto viene del alma.
+
+Te amo, mi vida. No sé si soy el hombre que esperas que sea, ni si en mi camino contigo he sabido estar a la altura, pero te prometo que mi amor es real. Quiero estar a tu lado en los días buenos y en los malos. Quiero ser el que te dé paz, el que te entienda, el que te acompañe, el que te abrace sin juzgarte.
+
+Perdóname si alguna vez no supe qué hacer o qué decir. Perdóname si te hice sentir sola en algún momento. Este regalo no es solo un detalle, es una muestra de lo mucho que me importas, de lo mucho que te amo y de cuánto me esfuerzo por ti. Todo esto lo hago porque eres todo para mí, porque te quiero, porque no imagino un futuro sin ti.
+
+Espero que puedas ver en estas palabras la sinceridad que las acompaña. No soy perfecto, ni lo pretendo, pero lo que siento por ti es lo más cercano a la perfección que jamás he conocido. Te amo.️</p>
+        <button id="showGirasolBtn" class="hidden" onclick="showGirasol()">Ver Girasol</button>
+        <div id="girasol" class="girasol">
+            🌻<br>
+            <p>Te amo y siempre lo haré, perdóname por el horror que soy, solo quiero decirte que te amo y que te extraño, esto no está hecho de un día para otro, llevo meses planeándolo, me importas mucho y sé que sabes que me esfuerzo por ti mi vida ❤️</p>
+        </div>
+
+        <!-- Nuevo botón para mostrar una frase de amor -->
+        <button id="showPhraseBtn" class="hidden" onclick="showPhrase()">Ver frase de amor</button>
+        <div id="phrase" class="hidden">
+            <p class="phrase">"Amar no es sólo vivir juntos, sino soportar el peso del mundo sin rendirse, sabiendo que siempre habrá alguien que, aunque tarde, te dará la mano en la oscuridad."</p>
+        </div>
+
+        <!-- Nuevo botón para mostrar la despedida -->
+        <button id="showGoodbyeBtn" class="hidden" onclick="showGoodbye()">Y mi amor...</button>
+        <div id="goodbye" class="hidden">
+            <p>Mi amor,<br><br>No sé si siempre supe cómo demostrar lo que siento, pero lo que jamás cambiará es mi amor por ti. Perdóname por las veces en que no supe ser el que esperabas, por los silencios y las dudas. Eres lo mejor de mi vida, y te amo más de lo que mis palabras pueden expresar.<br><br>Te pido que me ames, amosamente, con paciencia, porque aunque a veces me cueste expresarlo, mi amor por ti es eterno. Te extraño más de lo que imaginas, y siento que el tiempo sin ti es un vacío que me pesa.<br><br>Te deseo una Feliz Navidad, mi cielito precioso, y quiero que sepas que cada momento contigo es un regalo. Te prometo que mi promesa hacia tu niña interior sigue viva, como una promesa de amor que no pienso romper jamás.<br><br>Siempre tuyo. Te amo.</p>
+        </div>
+
+        <!-- Nueva tarjeta con muñeco de nieve -->
+        <button id="showSnowmanBtn" class="hidden" onclick="showSnowman()">Ver tarjeta de Navidad</button>
+        <div id="snowmanCard" class="hidden card-final">
+            <div class="snowman">⛄</div>
+            <p>Feliz Navidad, mi amor. Te amo, mi aposita amosa.</p>
+        </div>
+
+        <!-- Firma -->
+        <div class="signature">
+            JASS
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage1').style.display = 'block';
+            document.getElementById('showLetterBtn').style.display = 'block';
+        }
+
+        function showLetter() {
+            document.getElementById('hiddenLetter').style.display = 'block';
+            document.getElementById('showGirasolBtn').style.display = 'block';
+        }
+
+        function showGirasol() {
+            document.getElementById('girasol').style.display = 'block';
+            document.getElementById('showPhraseBtn').style.display = 'block';
+        }
+
+        function showPhrase() {
+            document.getElementById('phrase').style.display = 'block';
+            document.getElementById('showGoodbyeBtn').style.display = 'block';
+        }
+
+        function showGoodbye() {
+            document.getElementById('goodbye').style.display = 'block';
+            document.getElementById('showSnowmanBtn').style.display = 'block';
+        }
+
+        function showSnowman() {
+            document.getElementById('snowmanCard').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
